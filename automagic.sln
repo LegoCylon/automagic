@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "automagic", "automagic.vcxproj", "{388CD249-BFB0-4084-9CC0-9026798E7817}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug - clang|x64 = Debug - clang|x64
+		Debug - clang|x86 = Debug - clang|x86
+		Debug - VS2015|x64 = Debug - VS2015|x64
+		Debug - VS2015|x86 = Debug - VS2015|x86
+		Release - clang|x64 = Release - clang|x64
+		Release - clang|x86 = Release - clang|x86
+		Release - VS2015|x64 = Release - VS2015|x64
+		Release - VS2015|x86 = Release - VS2015|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{388CD249-BFB0-4084-9CC0-9026798E7817}.Debug - clang|x64.ActiveCfg = Debug - clang|x64
+		{388CD249-BFB0-4084-9CC0-9026798E7817}.Debug - clang|x64.Build.0 = Debug - clang|x64
+		{388CD249-BFB0-4084-9CC0-9026798E7817}.Debug - clang|x86.ActiveCfg = Debug - clang|Win32
+		{388CD249-BFB0-4084-9CC0-9026798E7817}.Debug - clang|x86.Build.0 = Debug - clang|Win32
+		{388CD249-BFB0-4084-9CC0-9026798E7817}.Debug - VS2015|x64.ActiveCfg = Debug - VS2015|x64
+		{388CD249-BFB0-4084-9CC0-9026798E7817}.Debug - VS2015|x64.Build.0 = Debug - VS2015|x64
+		{388CD249-BFB0-4084-9CC0-9026798E7817}.Debug - VS2015|x86.ActiveCfg = Debug - VS2015|Win32
+		{388CD249-BFB0-4084-9CC0-9026798E7817}.Debug - VS2015|x86.Build.0 = Debug - VS2015|Win32
+		{388CD249-BFB0-4084-9CC0-9026798E7817}.Release - clang|x64.ActiveCfg = Release - clang|x64
+		{388CD249-BFB0-4084-9CC0-9026798E7817}.Release - clang|x64.Build.0 = Release - clang|x64
+		{388CD249-BFB0-4084-9CC0-9026798E7817}.Release - clang|x86.ActiveCfg = Release - clang|Win32
+		{388CD249-BFB0-4084-9CC0-9026798E7817}.Release - clang|x86.Build.0 = Release - clang|Win32
+		{388CD249-BFB0-4084-9CC0-9026798E7817}.Release - VS2015|x64.ActiveCfg = Release - VS2015|x64
+		{388CD249-BFB0-4084-9CC0-9026798E7817}.Release - VS2015|x64.Build.0 = Release - VS2015|x64
+		{388CD249-BFB0-4084-9CC0-9026798E7817}.Release - VS2015|x86.ActiveCfg = Release - VS2015|Win32
+		{388CD249-BFB0-4084-9CC0-9026798E7817}.Release - VS2015|x86.Build.0 = Release - VS2015|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
