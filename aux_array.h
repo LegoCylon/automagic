@@ -15,7 +15,6 @@
 //--------------------------------------------------------------------------------------------------
 #pragma once
 
-#include "aux_constexpr.h"
 #include "aux_utility.h"
 
 #include <array>
@@ -29,12 +28,12 @@
 //--------------------------------------------------------------------------------------------------
 #if __cplusplus >= 201103L || (defined(_MSC_VER) && _MSC_VER >= 1800)
 template <typename... Ts, typename CommonType = std::common_type_t<Ts...>>
-constexpr_fun_ auto make_array (Ts&&... ts) {
+constexpr auto make_array (Ts&&... ts) {
     return std::array<CommonType, sizeof...(Ts)>{ { std::forward<Ts>(ts)... } };
 }
 
 template <typename ExplicitType, typename... Ts>
-constexpr_fun_ auto make_array (Ts&&... ts) {
+constexpr auto make_array (Ts&&... ts) {
     return std::array<ExplicitType, sizeof...(Ts)>{ { std::forward<Ts>(ts)... } };
 }
 
@@ -43,7 +42,7 @@ constexpr_fun_ auto make_array (Ts&&... ts) {
 //  initializers.
 //--------------------------------------------------------------------------------------------------
 template <std::size_t N, typename T>
-constexpr_fun_ auto make_filled_array (const T& t) {
+constexpr auto make_filled_array (const T& t) {
     return pass_split_sequence(
         [&t] (auto&&... is) { return std::array<T, N>{ { (void(is), t)... } }; },
         std::make_index_sequence<N>{}
@@ -51,7 +50,7 @@ constexpr_fun_ auto make_filled_array (const T& t) {
 }
 
 template <typename C, typename T, std::size_t N = std::tuple_size<C>::value>
-constexpr_fun_ auto make_filled_array (const C&, const T& t) {
+constexpr auto make_filled_array (const C&, const T& t) {
     return pass_split_sequence(
         [&t] (auto&&... is) { return std::array<T, N>{ { (void(is), t)... } }; },
         std::make_index_sequence<N>{}
@@ -64,7 +63,7 @@ constexpr_fun_ auto make_filled_array (const C&, const T& t) {
 //--------------------------------------------------------------------------------------------------
 #if __cplusplus >= 201402L || (defined(_MSC_VER) && _MSC_VER >= 1900)
 template <typename T, std::size_t N>
-constexpr_fun_ auto to_array (const T(&arr)[N]) {
+constexpr auto to_array (const T(&arr)[N]) {
     return pass_split_sequence(
         [&arr] (auto&&... is) { return std::array<std::remove_cv_t<T>, N>{ {arr[is]...} }; },
         std::make_index_sequence<N>{}
@@ -76,16 +75,16 @@ constexpr_fun_ auto to_array (const T(&arr)[N]) {
 //  In lieu of C++17 std::size.
 //--------------------------------------------------------------------------------------------------
 template <typename T, std::size_t N>
-constexpr_fun_ std::size_t size_array (const T (&)[N]) noexcept {
+constexpr std::size_t size_array (const T (&)[N]) noexcept {
     return N;
 }
 
 template <typename T, std::size_t N>
-constexpr_fun_ std::size_t size_array (const std::array<T, N>&) noexcept {
+constexpr std::size_t size_array (const std::array<T, N>&) noexcept {
     return N;
 }
 
 template <typename T>
-constexpr_fun_ std::size_t size_array (const std::initializer_list<T>& list) noexcept {
+constexpr std::size_t size_array (const std::initializer_list<T>& list) noexcept {
     return list.size();
 }

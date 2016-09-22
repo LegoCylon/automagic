@@ -15,12 +15,11 @@
 //--------------------------------------------------------------------------------------------------
 #pragma once
 
-#include "aux_constexpr.h"
 #include <iterator>
 
 //--------------------------------------------------------------------------------------------------
 template <typename Container, typename Function, typename... Ts>
-constexpr_fun_ decltype(auto) call_with_range (Container&& c, Function&& f, Ts&&... ts) {
+constexpr decltype(auto) call_with_range (Container&& c, Function&& f, Ts&&... ts) {
     using std::begin;
     using std::end;
     return f(begin(c), end(c), std::forward<Ts>(ts)...);

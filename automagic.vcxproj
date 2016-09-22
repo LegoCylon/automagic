@@ -291,7 +291,6 @@
     <ClInclude Include="gameV_1.h" />
     <ClInclude Include="gameV_2.h" />
     <ClInclude Include="aux_chrono.h" />
-    <ClInclude Include="aux_constexpr.h" />
     <ClInclude Include="aux_iterator.h" />
     <ClInclude Include="aux_random.h" />
   </ItemGroup>
